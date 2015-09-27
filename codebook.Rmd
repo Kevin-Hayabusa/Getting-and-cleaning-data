@@ -1,0 +1,32 @@
+This is a code book that describe the the variables, the data, and any transformations or work that you performed to clean up the data 
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
+
+###Activity label 
+1. WALKING
+2. WALKING_UPSTAIRS
+3. WALKING_DOWNSTAIRS
+4. SITTING
+5. STANDING
+6. LAYING
+
+###subjects
+integer numbers indicating the persion. 
+1 -30
+
+###transformation
+details can be find in run_analysis.R
+
+
+* download data set
+* unzip and set the working dir to "UCI HAR Dataset"
+* read tables from training and test tables and combined with rbind
+* filter the column required using grep "mean|sd" to get the index and subset them from original dataset
+* rename the column names by removing "()",",""-"
+* rename the labels with more descritive names like acc -> Accelerometer, gyro >- Gyroscope
+* read subject and activity table and combine them with rbind
+* add the new columns (subject and activity) into the dataset with cbind
+* group by the dataset with the column subject and activity
+* calculate the mean for each colun using summize_each function
+* write the dataset into tidy_data.txt
+
